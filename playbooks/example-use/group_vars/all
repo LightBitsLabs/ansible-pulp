@@ -4,15 +4,15 @@ pulp_install_plugins:
   # galaxy-ng: {}
   # pulp-ansible: {}
   # pulp-certguard: {}
-  # pulp-container: {}
+  pulp-container: {}
   # pulp-cookbook: {}
-  # pulp-deb: {}
+  pulp-deb: {}
   pulp-file: {}
   # pulp-gem: {}
   # pulp-maven: {}
   # pulp-npm: {}
-  # pulp-python: {}
-  # pulp-rpm: {}
+  pulp-python: {}
+  pulp-rpm: {}
 pulp_settings:
   secret_key: secret
   content_origin: "{{ pulp_webserver_disable_https | default(false) | ternary('http', 'https') }}://{{ ansible_fqdn }}"
