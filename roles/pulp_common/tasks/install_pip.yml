@@ -187,6 +187,13 @@
 - name: Install Pulp via Pip
   block:
 
+    - name: update setuptools above v40.0
+      pip:
+        name: [pip, setuptools]
+        state: latest
+        virtualenv: '{{ pulp_install_dir }}'
+        virtualenv_command: '{{ pulp_python_interpreter }} -m venv'
+
     - name: Install the prereq_pip_packages
       pip:
         name: '{{ prereq_pip_packages }}'
